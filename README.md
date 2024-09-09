@@ -1,20 +1,20 @@
 # Jobberwocky - Job Posting Service
 
-This project implements a job posting service where companies can share open job positions and users can search for jobs. The application also integrates with external job sources to fetch additional job opportunities.
+This project implements a job posting service where companies can share open job positions, and users can search for jobs. The application also integrates with external job sources to fetch additional job opportunities.
 
 ## Features
 
 - Create and list job postings.
-- Search for jobs by title, company, salary range, and more.
+- Search for jobs by title, company, salary range, country, and more.
 - Fetch external job opportunities from a separate service.
-- Subscribe to job alerts to receive notifications for new job postings.
+- Subscribe to job alerts and receive notifications for new job postings.
 
 ## Requirements
 
-- PHP >= 8.0
+- PHP >= 8.2
 - Composer
 - MySQL (or any other supported database)
-- Laravel 10
+- Laravel 11
 - Node.js & NPM (optional for front-end assets, if needed)
 
 ## Installation
@@ -63,7 +63,7 @@ Follow these steps to set up the project locally:
    EXTERNAL_JOB_SERVICE_URL=http://external-job-service-url.com
    ```
 
-   This URL will be used to fetch job postings from an external source.
+   This URL will be used to fetch job postings from the external source.
 
 5. **Run migrations:**
 

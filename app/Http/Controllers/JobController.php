@@ -26,8 +26,7 @@ class JobController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'company' => 'required|string|max:255',
-            'skills' => 'nullable|array',
-            'skills.*' => 'string',
+            'skills' => 'required|json',
             'country' => 'nullable|string|max:255',
             'salary' => 'nullable|numeric|min:0',
         ]);
