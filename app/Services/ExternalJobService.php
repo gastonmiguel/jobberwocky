@@ -7,10 +7,12 @@ use GuzzleHttp\Client;
 class ExternalJobService
 {
     protected $client;
+    protected $url;
 
     public function __construct()
     {
         $this->client = new Client();
+        $this->url = env('EXTERNAL_JOB_SERVICE_URL') ?? '';
     }
 
     /**
@@ -20,13 +22,11 @@ class ExternalJobService
     {
         try {
 
-            $url = 'http://localhost:8081/jobs';
-
             if (!empty($queryParams)) {
-                $url .= '?' . http_build_query($queryParams);
+                $this->url .= '?' . http_build_query($queryParams);
             }
 
-            $response = $this->client->get($url);
+            $response = $this->client->get($this->url);
             $externalJobs = json_decode($response->getBody()->getContents(), true);
 
             return $this->transformExternalJobs($externalJobs);
